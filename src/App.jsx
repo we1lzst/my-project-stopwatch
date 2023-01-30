@@ -52,9 +52,11 @@ class App extends Component {
       <div className="App">
           <div className='container'>
             <h1>Секундомер</h1>
-            {!this.state.key ? (<button onClick={this.timer} >Start</button>) : <button onClick={this.stopTimeRes}>Stop</button>}
-            <h1>{+localStorage.getItem('count')}</h1>
-            <button onClick={this.stopTime}>Restart</button>
+            <h1 className='App_count'>{+localStorage.getItem('count')}</h1>
+            <div className="App-start-restart">
+              {!this.state.key ? (<button onClick={this.timer} >Начать</button>) : <button onClick={this.stopTimeRes}>Остановить</button>}
+              <button onClick={this.stopTime}>Перезапустить</button>
+            </div>
           </div>
       </div>
     );
